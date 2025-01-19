@@ -1,6 +1,6 @@
-package com.noCountry.social_media_backend.demo.domain.user.DTOs;
+package com.noCountry.social_media_backend.demo.entity.user.DTOs;
 
-import com.noCountry.social_media_backend.demo.domain.user.User;
+import com.noCountry.social_media_backend.demo.entity.user.User;
 
 public record DtoUser(
         Integer id,

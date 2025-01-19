@@ -1,12 +1,13 @@
-package com.noCountry.social_media_backend.demo.domain.user;
+package com.noCountry.social_media_backend.demo.entity.user;
 
-import com.noCountry.social_media_backend.demo.domain.user.DTOs.DtoUser;
+import com.noCountry.social_media_backend.demo.entity.user.DTOs.DtoUser;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.Instant;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -26,7 +27,7 @@ public class User implements UserDetails {
     private String username;
     private String role;
     private String password;
-    private Date created_at;
+    private Instant created_at;
     private String first_name;
     private String second_name;
     private String last_name;
@@ -41,6 +42,7 @@ public class User implements UserDetails {
         this.last_name = dtoUser.last_name();
         this.profile_photo = dtoUser.profile_photo();
         this.country = dtoUser.country();
+        this.created_at = Instant.now();
     }
 
     @Override

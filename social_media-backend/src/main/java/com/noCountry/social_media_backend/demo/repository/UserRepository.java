@@ -1,5 +1,6 @@
-package com.noCountry.social_media_backend.demo.domain.user;
+package com.noCountry.social_media_backend.demo.repository;
 
+import com.noCountry.social_media_backend.demo.entity.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 
