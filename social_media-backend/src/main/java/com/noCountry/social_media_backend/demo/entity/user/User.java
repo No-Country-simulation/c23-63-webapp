@@ -1,62 +1,41 @@
 package com.noCountry.social_media_backend.demo.entity.user;
 
-import com.noCountry.social_media_backend.demo.entity.user.DTOs.DtoUser;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+
 import jakarta.persistence.*;
-import lombok.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import java.time.LocalDateTime;
 
-import java.time.Instant;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-
-@Table(name = "users")
-@Entity(name = "User")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "id")
-public class User implements UserDetails {
+@Builder
+@Entity
+@Table(name = "user", schema = "social_media", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "email"),
+        @UniqueConstraint(columnNames = "username")
+})
+public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_id_seq")
+    @SequenceGenerator(name = "user_id_seq", sequenceName = "social_media.user_id_seq", allocationSize = 1)
     private Integer id;
+
+    @Column(nullable = false, length = 50)
     private String username;
-    private String role;
+
+    @Column(nullable = false, length = 255)
     private String password;
-    private Instant created_at;
-    private String first_name;
-    private String second_name;
-    private String last_name;
-    private String profile_photo;
-    private String country;
 
-    public User(DtoUser dtoUser) {
-        this.id = dtoUser.id();
-        this.username = dtoUser.username();
-        this.first_name = dtoUser.first_name();
-        this.second_name = dtoUser.second_name();
-        this.last_name = dtoUser.last_name();
-        this.profile_photo = dtoUser.profile_photo();
-        this.country = dtoUser.country();
-        this.created_at = Instant.now();
-    }
+    @Column(nullable = false, length = 100)
+    private String email;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
-    }
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return username;
-    }
+    @Column(length = 50)
+    private String role = "USER";
 }

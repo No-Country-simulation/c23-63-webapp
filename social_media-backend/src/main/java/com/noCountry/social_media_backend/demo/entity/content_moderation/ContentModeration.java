@@ -1,4 +1,4 @@
-package com.noCountry.social_media_backend.demo.entity.comment;
+package com.noCountry.social_media_backend.demo.entity.content_moderation;
 
 import com.noCountry.social_media_backend.demo.entity.post.Post;
 import com.noCountry.social_media_backend.demo.entity.user.User;
@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+
 import java.time.LocalDateTime;
 
 @Data
@@ -14,12 +15,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "comment", schema = "social_media")
-public class Comment {
+@Table(name = "content_moderation", schema = "social_media")
+public class ContentModeration {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "comment_id_seq")
-    @SequenceGenerator(name = "comment_id_seq", sequenceName = "social_media.comment_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "content_moderation_id_seq")
+    @SequenceGenerator(name = "content_moderation_id_seq", sequenceName = "social_media.content_moderation_id_seq", allocationSize = 1)
     private Integer id;
 
     @ManyToOne
@@ -27,11 +28,14 @@ public class Comment {
     private Post post;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "moderator_id", nullable = false)
+    private User moderator;
 
-    @Column(nullable = false)
-    private String content;
+    @Column(nullable = false, length = 50)
+    private String action;
+
+    @Column
+    private String reason;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
