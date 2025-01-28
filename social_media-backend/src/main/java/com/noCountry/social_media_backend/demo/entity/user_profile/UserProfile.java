@@ -17,8 +17,8 @@ import jakarta.persistence.*;
 public class UserProfile {
 
     @Id
-    @Column(name = "user_id")
-    private Integer userId;
+    @Column(name = "id")
+    private Integer id;
 
     @OneToOne
     @MapsId

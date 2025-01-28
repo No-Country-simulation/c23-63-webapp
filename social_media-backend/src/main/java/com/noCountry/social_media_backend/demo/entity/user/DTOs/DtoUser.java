@@ -2,17 +2,19 @@ package com.noCountry.social_media_backend.demo.entity.user.DTOs;
 
 import com.noCountry.social_media_backend.demo.entity.user.User;
 
+import java.time.LocalDateTime;
+
 public record DtoUser(
         Integer id,
         String username,
-        String first_name,
-        String second_name,
-        String last_name,
-        String profile_photo,
-        String country
+        String password,
+        String email,
+        LocalDateTime createdAt,
+        String role
+
 ) {
 
     public DtoUser(User user) {
-        this(user.getId(),user.getUsername(),user.getFirst_name(),user.getSecond_name(),user.getLast_name(),user.getProfile_photo(),user.getCountry());
+        this(user.getId(),user.getUsername(),user.getPassword(),user.getEmail(),user.getCreatedAt(),user.getRole());
     }
 }
