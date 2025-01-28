@@ -13,7 +13,7 @@ public record DtoComment(
         String content,
         LocalDateTime createdAt
 ) {
-    public DtoComment(Comment comment) {
-        this(comment.getId(),comment.getPost(),comment.getUser(),comment.getContent(),comment.getCreatedAt());
-    }
+   // public DtoComment(Comment comment) {
+   //     this(comment.getId(),comment.getPost(),comment.getUser(),comment.getContent(),comment.getCreatedAt());
+   // }
 }

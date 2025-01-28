@@ -15,7 +15,7 @@ public record DtoPost(
         LocalDateTime createdAt
 ) {
 
-    public DtoPost(Post post) {
-        this(post.getId(),post.getUser(),post.getTitle(),post.getContent(),post.getImageUrl(),post.getCategory(),post.getCreatedAt());
-    }
+    //public DtoPost(Post post) {
+   //     this(post.getId(),post.getUser(),post.getTitle(),post.getContent(),post.getImageUrl(),post.getCategory(),post.getCreatedAt());
+    //}
 }

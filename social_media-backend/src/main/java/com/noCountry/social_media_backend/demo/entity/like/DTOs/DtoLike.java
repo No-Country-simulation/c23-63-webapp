@@ -12,8 +12,8 @@ public record DtoLike(
         User user,
         LocalDateTime createdAt
 ) {
-    public DtoLike(Like like) {
-        this(like.getId(),like.getPost(),like.getUser(),like.getCreatedAt());
-    }
+    //public DtoLike(Like like) {
+    //    this(like.getId(),like.getPost(),like.getUser(),like.getCreatedAt());
+   // }
 
 }

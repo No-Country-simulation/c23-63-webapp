@@ -18,8 +18,8 @@ public record DtoUserProfile(
         String personalLink,
         String jobTitle
 ) {
-    public DtoUserProfile(UserProfile userProfile) {
-        this(userProfile.getId(),userProfile.getUser(),userProfile.getFirstName(),userProfile.getSecondName(),userProfile.getLastName(),
-                userProfile.getProfilePhoto(),userProfile.getCountry(),userProfile.getDiscordLink(),userProfile.getLinkedinLink(),userProfile.getGithubLink(),userProfile.getYoutubeLink(),userProfile.getPersonalLink(),userProfile.getJobTitle());
-    }
+   // public DtoUserProfile(UserProfile userProfile) {
+   //     this(userProfile.getId(),userProfile.getUser(),userProfile.getFirstName(),userProfile.getSecondName(),userProfile.getLastName(),
+   //             userProfile.getProfilePhoto(),userProfile.getCountry(),userProfile.getDiscordLink(),userProfile.getLinkedinLink(),userProfile.getGithubLink(),userProfile.getYoutubeLink(),userProfile.getPersonalLink(),userProfile.getJobTitle());
+   // }
 }

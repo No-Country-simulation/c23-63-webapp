@@ -14,7 +14,7 @@ public record DtoUser(
 
 ) {
 
-    public DtoUser(User user) {
-        this(user.getId(),user.getUsername(),user.getPassword(),user.getEmail(),user.getCreatedAt(),user.getRole());
-    }
+   // public DtoUser(User user) {
+   //     this(user.getId(),user.getUsername(),user.getPassword(),user.getEmail(),user.getCreatedAt(),user.getRole());
+   // }
 }

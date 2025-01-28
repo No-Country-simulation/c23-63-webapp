@@ -13,7 +13,7 @@ public record DtoNotification(
         LocalDateTime createdAt
 ) {
 
-    public DtoNotification(Notification notification) {
-        this(notification.getId(),notification.getUser(),notification.getMessage(),notification.getIsRead(),notification.getCreatedAt());
-    }
+   // public DtoNotification(Notification notification) {
+   //     this(notification.getId(),notification.getUser(),notification.getMessage(),notification.getIsRead(),notification.getCreatedAt());
+   // }
 }

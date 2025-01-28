@@ -15,7 +15,7 @@ public record DtoContentModeration(
         LocalDateTime createdAt
 ) {
 
-    public DtoContentModeration(ContentModeration contentModeration) {
-        this(contentModeration.getId(),contentModeration.getPost(),contentModeration.getModerator(),contentModeration.getAction(),contentModeration.getCreatedAt());
-    }
+   // public DtoContentModeration(ContentModeration contentModeration) {
+   //     this(contentModeration.getId(),contentModeration.getPost(),contentModeration.getModerator(),contentModeration.getAction(),contentModeration.getCreatedAt());
+   // }
 }

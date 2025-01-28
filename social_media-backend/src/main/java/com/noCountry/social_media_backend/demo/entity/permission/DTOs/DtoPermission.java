@@ -11,7 +11,7 @@ public record DtoPermission(
         String permission,
         LocalDateTime grantedAt
 ) {
-    public DtoPermission(Permission permission) {
-        this(permission.getId(),permission.getUser(),permission.getPermission(),permission.getGrantedAt());
-    }
+   // public DtoPermission(Permission permission) {
+    //    this(permission.getId(),permission.getUser(),permission.getPermission(),permission.getGrantedAt());
+   // }
 }
