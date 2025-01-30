@@ -6,9 +6,7 @@ import com.noCountry.social_media_backend.demo.entity.user_profile.UserProfile;
 public record DtoUserProfile(
         Integer id,
         User user,
-        String firstName,
-        String secondName,
-        String lastName,
+        String name,
         String profilePhoto,
         String country,
         String discordLink,

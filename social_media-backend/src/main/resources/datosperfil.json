@@ -1,0 +1,37 @@
+{
+  "userId": 1,
+  "name": "First User",
+  "jobTitle": "Frontend Developer",
+  "links": [
+    {
+      "type": "discord",
+      "url": "https://discord.com/"
+    },
+    {
+      "type": "dribble",
+      "url": "https://dribbble.com/"
+    },
+    {
+      "type": "linkedin",
+      "url": "https://linkedin.com/"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/"
+    },
+    {
+      "type": "instagram",
+      "url": "https://instagram.com/"
+    },
+    {
+      "type": "youtube",
+      "url": "https://youtube.com/"
+    }
+  ],
+  "friends": 205,
+  "isFriend": true
+}
+//Forma en la que se pueden ver los perfiles
+//Me pasas el sessionId () que esta viendo el perfil
+//Si es null, "isFriend": false
+//Si es un userId, se verifica en la base de datos
