@@ -1,0 +1,31 @@
+{
+  "userId": 1,
+  "name": "First User",
+  "jobTitle": "Frontend Developer",
+  "links": [
+    {
+      "type": "discord",
+      "url": "https://discord.com/"
+    },
+    {
+      "type": "dribble",
+      "url": "https://dribbble.com/"
+    },
+    {
+      "type": "linkedin",
+      "url": "https://linkedin.com/"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/"
+    },
+    {
+      "type": "instagram",
+      "url": "https://instagram.com/"
+    },
+    {
+      "type": "youtube",
+      "url": "https://youtube.com/"
+    }
+  ]
+}

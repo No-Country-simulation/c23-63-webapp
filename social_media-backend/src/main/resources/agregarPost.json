@@ -1,0 +1,13 @@
+{
+  "postId": 1,
+  "createdAt": "2021-09-01T00:00:00Z",
+  "description": {
+    "title": "This is my first post",
+    "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+    "imageUrl": "https://cdn.pixabay.com/photo/2024/07/01/10/50/flycatcher-8864922_640.jpg"
+  },
+  "category": [
+    "React",
+    "JS"
+  ]
+}

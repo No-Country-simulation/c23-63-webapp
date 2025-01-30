@@ -25,20 +25,11 @@ public class UserProfile {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "first_name", length = 50)
-    private String firstName;
-
-    @Column(name = "second_name", length = 50)
-    private String secondName;
-
-    @Column(name = "last_name", length = 50)
-    private String lastName;
+    @Column(name = "name", length = 50)
+    private String name;
 
     @Column(name = "profile_photo", length = 255)
     private String profilePhoto;
-
-    @Column(name = "country", length = 50)
-    private String country;
 
     @Column(name = "discord_link", length = 255)
     private String discordLink;

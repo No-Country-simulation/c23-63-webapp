@@ -1,0 +1,36 @@
+{
+    "userId": 1,
+    "countPosts": 9,
+    "posts": [
+      {
+        "postId": 1,
+        "createdAt": "2021-09-01T00:00:00Z",
+        "description": {
+          "title": "This is my first post",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+          "imageUrl": "https://cdn.pixabay.com/photo/2024/07/01/10/50/flycatcher-8864922_640.jpg",
+        },
+        "category": ["React", "JS"]
+      },
+      {
+        "post_id": 2,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "content": {
+          "title": "This is my first post",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+          "imageUrl": "https://cdn.pixabay.com/photo/2023/07/27/14/52/universe-8153526_640.jpg"
+        },
+        "category": ["React", "JS"]
+      },
+      {
+        "post_id": 3,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "content": {
+          "title": "This is my first post",
+          "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+          "imageUrl": "https://cdn.pixabay.com/photo/2024/12/31/01/02/costa-rica-9301364_640.jpg"
+        },
+        "category": ["React", "JS"]
+      }
+    ]
+}
