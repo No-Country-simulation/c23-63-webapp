@@ -1,13 +1,10 @@
 package com.noCountry.social_media_backend.demo.service.user;
 
-import com.noCountry.social_media_backend.demo.entity.user.DTOs.DtoUser;
-import org.springframework.stereotype.Service;
+import com.noCountry.social_media_backend.demo.dto.UsuarioCrearRequestDto;
+import com.noCountry.social_media_backend.demo.entity.user.User;
 
-@Service
-public class UserService {
+public interface UserService {
+    String crearUsuario(UsuarioCrearRequestDto usuarioCrearRequestDto);
 
-    public DtoUser createUser(DtoUser createUser) {
-        return null; //te dejamos esta parte :)
-    }
-
+    User usuarioPorCorreo(String username);
 }
