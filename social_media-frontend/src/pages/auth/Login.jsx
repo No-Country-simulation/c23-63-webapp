@@ -1,36 +1,56 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import Logo from "../../assets/Logo"
-
-import { GoogleLogin } from '@react-oauth/google';
-
 
 
 export default function Login() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
 
-  const handleLoginSubmit = (event) => {
+   const googleLogin = () => {
+    window.location.href = "http://localhost:8080/oauth2/authorization/google";
+  };
+
+  const handleLoginSubmit = async (event) => {
     event.preventDefault()
     console.log(email, password)
+    try {
+      const response = await fetch("http://localhost:8080/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al iniciar sesión");
+      }
+
+      const data = await response.json();
+      console.log("Token recibido:", data.token);
+      console.log("Datos del usuario:", data.usuarioAuth);
+
+      localStorage.setItem("token", data.token);
+
+      navigate("/");
+    } catch (error) {
+      setErrorMessage("Credenciales inválidas. Intenta nuevamente.");
+      console.error(error);
+    }
+
   }
+  
   return (
     <>
       <header className="grid gap-10 justify-items-center">
         <Logo />
         <p className="text-4xl ">¡Que bueno verte!</p>
-        <GoogleLogin
-          theme='filled_black'
-          size='large'
-          onSuccess={credentialResponse => {
-            console.log(credentialResponse);
-          }}
-          onError={() => {
-            console.log('Login Failed');
-          }}
-        />
+        <button onClick={googleLogin} className="bg-black w-full p-3 rounded-2xl text-16 font-medium font-popins">Ingresar con Google</button>
       </header>
       
       <div className="flex items-center">
