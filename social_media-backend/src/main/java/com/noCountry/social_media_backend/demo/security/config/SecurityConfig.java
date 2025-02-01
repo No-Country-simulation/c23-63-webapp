@@ -17,6 +17,7 @@ public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final AuthenticationProvider authProvider;
+   // private final CustomOAuth2UserService customOAuth2UserService;
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http, CorsConfigurationSource corsConfigurationSource) throws Exception {
@@ -25,6 +26,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         authorizeRequest -> authorizeRequest
                                 .requestMatchers("/auth/**").permitAll()
+                                .requestMatchers("/posts/**").authenticated()
                                 .anyRequest().authenticated()
                 )
                 .authenticationProvider(authProvider)
