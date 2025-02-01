@@ -11,6 +11,7 @@ export default function PostsProfile({id , setShowCreateForm}){
     const getData = async () => {
       try {
         const { posts, countPosts } = await getPostsByProfileId(id);
+        console.log(posts)
         setPosts(posts);
         setCountPosts(countPosts);
       } catch (error) {
