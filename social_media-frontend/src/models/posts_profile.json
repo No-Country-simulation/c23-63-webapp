@@ -21,7 +21,7 @@
           "content": "Lorem ipsum is simply",
           "imageUrl": "https://cdn.pixabay.com/photo/2023/07/27/14/52/universe-8153526_640.jpg"
         },
-        "tags": ["React", "JS"]
+        "category": ["React", "JS"]
       },
       {
         "post_id": 3,
@@ -30,8 +30,7 @@
           "title": "This is my first post",
           "content": "Lorem ipsum is simply",
           "imageUrl": "https://cdn.pixabay.com/photo/2024/12/31/01/02/costa-rica-9301364_640.jpg"
-        },
-        "tags": ["React", "JS"]
+        }
       },
       {
         "post_id": 4,
@@ -41,7 +40,7 @@
           "content": "Lorem ipsum is simply",
           "imageUrl": "https://cdn.pixabay.com/photo/2024/11/27/07/51/woman-9227532_640.jpg"
         },
-        "tags": ["React", "JS"]
+        "category": ["React", "JS"]
       },
       {
         "post_id": 5,
@@ -51,7 +50,7 @@
           "content": "Lorem ipsum is simply",
           "imageUrl": "https://cdn.pixabay.com/photo/2021/08/11/02/49/sunset-6537216_640.jpg"
         },
-        "tags": ["React", "JS"]
+        "category": ["React", "JS"]
       },
       {
         "post_id": 6,
@@ -61,7 +60,7 @@
           "content": "Lorem ipsum is simply",
           "imageUrl": "https://cdn.pixabay.com/photo/2023/12/12/15/36/sea-8445435_640.jpg"
         },
-        "tags": ["React", "JS"]
+        "category": ["React", "JS"]
       },
       {
         "post_id": 7,
@@ -71,7 +70,7 @@
           "content": "Lorem ipsum is simply",
           "imageUrl": "https://cdn.pixabay.com/photo/2023/07/21/21/05/bus-8142339_640.jpg"
         },
-        "tags": ["React", "JS"]
+        "category": ["React", "JS"]
       },
       {
         "posts_id": 8,
@@ -79,9 +78,9 @@
         "description": {
           "title":"This is my first post",
           "content": "Lorem ipsum is simply",
-          "imageUrl": "https://cdn.pixabay.com/photo/2024/01/07/10/50/grey-wolf-8492789_640.png",
-          "tags": ["React", "JS"]
-        }
+          "imageUrl": "https://cdn.pixabay.com/photo/2024/01/07/10/50/grey-wolf-8492789_640.png"
+        },
+        "category": ["React", "JS"]
       },
       {
         "posts_id": 9,
@@ -89,9 +88,9 @@
         "description": {
           "title":"This is my first post",
           "content": "Lorem ipsum is simply",
-          "imageUrl": "https://cdn.pixabay.com/photo/2023/01/23/00/45/cat-7737618_640.jpg",
-          "tags": ["React", "JS"]
-        }
+          "imageUrl": "https://cdn.pixabay.com/photo/2023/01/23/00/45/cat-7737618_640.jpg"
+        },
+        "category": ["React", "JS"]
       }
     ]
   }

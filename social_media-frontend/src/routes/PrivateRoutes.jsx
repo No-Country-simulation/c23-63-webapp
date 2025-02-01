@@ -1,5 +1,5 @@
 import { Route } from "react-router-dom";
-import PageHome from "../pages/Home/PageHome";
+import PageHome from "../pages/home/PageHome";
 import PrivateRouterFilter from "./PrivateRouterFilter";
 
 export function PrivateRoutes() {

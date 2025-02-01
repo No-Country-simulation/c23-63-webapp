@@ -5,11 +5,10 @@ import Register from "../pages/auth/Register";
 import PasswordRecoveryRequest from "../pages/auth/PasswordRecoveryRequest";
 import PasswordResetConfirmation from "../pages/auth/PasswordResetConfirmation";
 import PublicRouterFilter from "./PublicRouterFilter";
-import PageProfile from "../pages/PageProfile";
 import Page404 from "../pages/Page404";
-
-
+import PageProfile from "../pages/Profile/PageProfile";
 import PageHome from "../pages/Home/PageHome";
+
 import VerifySession from "../pages/auth/VerifySession";
 
 export function PublicRoutes() {

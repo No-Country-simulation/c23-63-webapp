@@ -1,20 +1,36 @@
 import NavBar from "../../components/NavBar";
 import UserInfo from "../../components/UserInfo";
+import { useAuthContext } from "../../context/AuthContext";
 import PostFeed from "./PostFeed";
 
 export default function PageHome() {
+  const  { logout } = useAuthContext()
   return (
     <div className="pb-3">
       <NavBar/>
-      <section className=" max-w-screen-2xl mx-auto grid grid-cols-7 gap-5 justify-center">
-        <aside className="hidden lg:block col-span-2 sticky top-[82px] self-start">
-          <UserInfo id={1}/>
+      <section className=" max-w-screen-xl mx-auto md:grid grid-cols-7 gap-4 justify-center">
+        <aside className="hidden md:flex flex-col col-span-2 px-2 sticky top-[82px] justify-between h-[calc(100vh-94px)] ">
+          <article>
+            <UserInfo id={1} isFeed={true}/>
+          </article>
+          <section>
+            <button 
+              onClick={logout}
+              className="w-full p-4 rounded-xl bg-primary-800"
+            >
+              logout
+            </button>
+          </section>
         </aside>
-        <main className="col-span-3 px-3 lg:px-0 max-w-2xl w-fullpx-auto grid gap-10">
+        <main className="w-full lg:max-w-2xl lg:col-span-3 md:col-span-5 grid gap-10 px-3 lg:px-0 px-auto ">
+          <PostFeed/>
+          <PostFeed/>
+          <PostFeed/>
+          <PostFeed/>
           <PostFeed/>
           <PostFeed/>
         </main>
-        <aside className="hidden col-span-2 lg:flex flex-col max-w-xs gap-4 sticky top-[82px] self-start">
+        <aside className="hidden lg:flex flex-col col-span-2 max-w-xs gap-4 px-2 sticky top-[82px] self-start">
           <article className=" w-full bg-primary-800 rounded-2xl">
             <h3 className="title p-3">Amigos sugeridos</h3>
             <ul>

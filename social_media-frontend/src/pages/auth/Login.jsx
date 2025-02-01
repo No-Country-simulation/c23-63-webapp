@@ -52,7 +52,8 @@ export default function Login() {
   return (
     <>
       <BaseForm title="¡Que bueno verte!" onSubmit={handleLoginSubmit}>
-          <button 
+          <button
+            type="button"
             onClick={handleGoogleLogin}
             className="w-full bg-neutral-800 p-3 flex justify-center items-center gap-2 rounded-lg paragraph-s"
           >
