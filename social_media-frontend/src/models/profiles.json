@@ -1,0 +1,136 @@
+{
+  "profiles": [
+    {
+      "user_id": 1,
+      "name": "First User",
+      "bio": "Frontend Developer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
+      "links": [
+        {
+          "type": "discord",
+          "url": "https://discord.com/"
+        },
+        {
+          "type": "dribble",
+          "url": "https://dribbble.com/"
+        },
+        {
+          "type": "linkedin",
+          "url": "https://linkedin.com"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com"
+        },
+        {
+          "type": "instagram",
+          "url": "https://instagram.com"
+        },
+        {
+          "type": "youtube",
+          "url": "https://youtube.com"
+        }
+      ],
+      "friends": 205
+    },
+    {
+      "user_id": 2,
+      "name": "Second User",
+      "bio": "QA Engineer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2?v=4",
+      "links": [
+        {
+          "type": "discord",
+          "url": "https://discord.com/"
+        },
+        {
+          "type": "dribble",
+          "url": "https://dribbble.com/"
+        },
+        {
+          "type": "linkedin",
+          "url": "https://linkedin.com"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com"
+        },
+        {
+          "type": "instagram",
+          "url": "https://instagram.com"
+        },
+        {
+          "type": "youtube",
+          "url": "https://youtube.com"
+        }
+      ],
+      "followers": 130
+    },
+    {
+      "user_id": 3,
+      "name": "Third User",
+      "bio": "UX Designer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3?v=4",
+      "links": [
+        {
+          "type": "discord",
+          "url": "https://discord.com/"
+        },
+        {
+          "type": "dribble",
+          "url": "https://dribbble.com/"
+        },
+        {
+          "type": "linkedin",
+          "url": "https://linkedin.com"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com"
+        },
+        {
+          "type": "instagram",
+          "url": "https://instagram.com"
+        },
+        {
+          "type": "youtube",
+          "url": "https://youtube.com"
+        }
+      ],
+      "followers": 145
+    },
+    {
+      "user_id": 4,
+      "name": "Fourth User",
+      "bio": "Backend Developer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4?v=4",
+      "links": [
+        {
+          "type": "discord",
+          "url": "https://discord.com/"
+        },
+        {
+          "type": "dribble",
+          "url": "https://dribbble.com/"
+        },
+        {
+          "type": "linkedin",
+          "url": "https://linkedin.com"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com"
+        },
+        {
+          "type": "instagram",
+          "url": "https://instagram.com"
+        },
+        {
+          "type": "youtube",
+          "url": "https://youtube.com"
+        }
+      ],
+      "followers": 87
+    }
+  ]
+}

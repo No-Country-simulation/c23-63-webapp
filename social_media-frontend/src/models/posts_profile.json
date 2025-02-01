@@ -1,0 +1,98 @@
+{
+  "posts_profile": {
+    "user_id": 1,
+    "count_posts": 9,
+    "posts": [
+      {
+        "post_id": 1,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "description": {
+          "title": "This is my first post",
+          "content": "Lorem ipsum is simply",
+          "imageUrl": "https://cdn.pixabay.com/photo/2024/07/01/10/50/flycatcher-8864922_640.jpg"
+        },
+        "category": ["React", "JS"]
+      },
+      {
+        "post_id": 2,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "description": {
+          "title": "This is my first post",
+          "content": "Lorem ipsum is simply",
+          "imageUrl": "https://cdn.pixabay.com/photo/2023/07/27/14/52/universe-8153526_640.jpg"
+        },
+        "tags": ["React", "JS"]
+      },
+      {
+        "post_id": 3,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "description": {
+          "title": "This is my first post",
+          "content": "Lorem ipsum is simply",
+          "imageUrl": "https://cdn.pixabay.com/photo/2024/12/31/01/02/costa-rica-9301364_640.jpg"
+        },
+        "tags": ["React", "JS"]
+      },
+      {
+        "post_id": 4,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "description": {
+          "title": "This is my first post",
+          "content": "Lorem ipsum is simply",
+          "imageUrl": "https://cdn.pixabay.com/photo/2024/11/27/07/51/woman-9227532_640.jpg"
+        },
+        "tags": ["React", "JS"]
+      },
+      {
+        "post_id": 5,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "description": {
+          "title": "This is my first post",
+          "content": "Lorem ipsum is simply",
+          "imageUrl": "https://cdn.pixabay.com/photo/2021/08/11/02/49/sunset-6537216_640.jpg"
+        },
+        "tags": ["React", "JS"]
+      },
+      {
+        "post_id": 6,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "description": {
+          "title": "This is my first post",
+          "content": "Lorem ipsum is simply",
+          "imageUrl": "https://cdn.pixabay.com/photo/2023/12/12/15/36/sea-8445435_640.jpg"
+        },
+        "tags": ["React", "JS"]
+      },
+      {
+        "post_id": 7,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "description": {
+          "title": "This is my first post",
+          "content": "Lorem ipsum is simply",
+          "imageUrl": "https://cdn.pixabay.com/photo/2023/07/21/21/05/bus-8142339_640.jpg"
+        },
+        "tags": ["React", "JS"]
+      },
+      {
+        "posts_id": 8,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "description": {
+          "title":"This is my first post",
+          "content": "Lorem ipsum is simply",
+          "imageUrl": "https://cdn.pixabay.com/photo/2024/01/07/10/50/grey-wolf-8492789_640.png",
+          "tags": ["React", "JS"]
+        }
+      },
+      {
+        "posts_id": 9,
+        "publish_date": "2021-09-01T00:00:00Z",
+        "description": {
+          "title":"This is my first post",
+          "content": "Lorem ipsum is simply",
+          "imageUrl": "https://cdn.pixabay.com/photo/2023/01/23/00/45/cat-7737618_640.jpg",
+          "tags": ["React", "JS"]
+        }
+      }
+    ]
+  }
+}
