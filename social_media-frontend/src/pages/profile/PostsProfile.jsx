@@ -1,9 +1,32 @@
+import { useEffect, useState } from "react";
 import IconNewProject from "../../assets/Icons/IconNewProject"
 import { getPostsByProfileId } from "../../services/profileService"
 
 export default function PostsProfile({id , setShowCreateForm}){
-  const {posts, countPosts} = getPostsByProfileId(id)
-// api/post/:{id}
+  const [posts, setPosts] = useState([]);
+  const [countPosts, setCountPosts] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(()=>{
+    const getData = async () => {
+      try {
+        const { posts, countPosts } = await getPostsByProfileId(id);
+        setPosts(posts);
+        setCountPosts(countPosts);
+      } catch (error) {
+        console.error('Error al obtener los posts:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    getData()
+  },[id])
+
+  if(loading){
+    return <p>Cargando...</p>
+  }
+
   return(
     <>
       <header className="flex gap-2">

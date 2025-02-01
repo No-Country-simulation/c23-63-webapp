@@ -22,8 +22,9 @@ export const getProfileById = (id) => {
 
 export const getPostsByProfileId = async (id) => {
   try {
-    const response = await axiosApi.get(`api/post/${id}`)
+    const response = await axiosApi.get(`api/posts/${id}`)
     console.log(response)
+    console.log(response.data)
     return response
   }catch(err){
     console.log(err)
