@@ -38,6 +38,7 @@ public class Post {
     @Column(length = 50)
     private String category;
 
+    @Builder.Default
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 }

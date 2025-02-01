@@ -30,8 +30,9 @@ public class SecurityConfig {
                 .authenticationProvider(authProvider)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .httpBasic(AbstractHttpConfigurer::disable)
-                .oauth2Login(oauth2 -> oauth2.defaultSuccessUrl("http://localhost:5173", true));
+                .oauth2Login(oauth2 -> oauth2.defaultSuccessUrl("http://localhost:5173/verify-session", true));
 
         return http.build();
     }
 }
+

@@ -6,6 +6,8 @@ import com.noCountry.social_media_backend.demo.dto.ExitoResponseDto;
 import com.noCountry.social_media_backend.demo.dto.LoginRequestDto;
 import com.noCountry.social_media_backend.demo.dto.UsuarioCrearRequestDto;
 import com.noCountry.social_media_backend.demo.service.auth.AuthService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +20,29 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("login")
-    public ResponseEntity<AuthResponseDto> login(@RequestBody LoginRequestDto loginRequestDto) {
-        return ResponseEntity.ok(this.authService.login(loginRequestDto));
+    public ResponseEntity<AuthResponseDto> login(@RequestBody LoginRequestDto loginRequestDto, HttpServletResponse response) {
+        AuthResponseDto authResponseDto = authService.login(loginRequestDto);
+
+        Cookie jwtCookie = new Cookie("token", authResponseDto.getToken());
+
+        jwtCookie.setHttpOnly(true);
+        jwtCookie.setSecure(true);
+        jwtCookie.setPath("/");
+        jwtCookie.setMaxAge(86400);
+
+        response.addCookie(jwtCookie);
+
+        return ResponseEntity.ok(authResponseDto);
     }
 
     @PostMapping("register")
     public ResponseEntity<ExitoResponseDto> register(@RequestBody UsuarioCrearRequestDto usuarioCrearRequestDto) {
         return ResponseEntity.ok(this.authService.register(usuarioCrearRequestDto));
     }
+
+
+
+
+
+
 }

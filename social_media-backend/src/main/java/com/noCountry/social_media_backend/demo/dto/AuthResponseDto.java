@@ -5,4 +5,7 @@ public record AuthResponseDto(
         UsuarioResponseDto usuarioAuth
 ) {
 
+    public String getToken() {
+        return token;
+    }
 }

@@ -33,6 +33,7 @@ public class Comment {
     @Column(nullable = false)
     private String content;
 
+    @Builder.Default
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 }

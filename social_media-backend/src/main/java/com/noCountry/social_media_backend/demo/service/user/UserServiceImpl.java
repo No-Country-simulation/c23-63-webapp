@@ -18,6 +18,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository usuarioRepository;
     private final PasswordEncoder passwordEncoder;
 
+
     @Override
     public String crearUsuario(UsuarioCrearRequestDto usuarioCrearRequestDto) {
         User nuevoUsuario = User.builder()

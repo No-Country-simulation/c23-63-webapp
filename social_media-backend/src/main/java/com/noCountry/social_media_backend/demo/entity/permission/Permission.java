@@ -29,6 +29,7 @@ public class Permission {
     @Column(nullable = false, length = 50)
     private String permission;
 
+    @Builder.Default
     @Column(name = "granted_at", nullable = false, updatable = false)
     private LocalDateTime grantedAt = LocalDateTime.now();
 }

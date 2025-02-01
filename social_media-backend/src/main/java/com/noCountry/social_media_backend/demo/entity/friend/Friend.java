@@ -15,15 +15,17 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @Table(name = "friend", schema = "social_media")
-@IdClass(FriendId.class)
 public class Friend {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "friend_id_seq")
+    private Integer id;
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Id
+
     @ManyToOne
     @JoinColumn(name = "friend_id", nullable = false)
     private User friend;
@@ -31,6 +33,7 @@ public class Friend {
     @Column(length = 20, nullable = false)
     private String status = "PENDING";
 
+    @Builder.Default
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 }
