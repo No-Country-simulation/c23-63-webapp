@@ -9,7 +9,8 @@ export default function VerifySession () {
   useEffect(()=>{
     const verifySession = async () => {
       try {
-        const {data} = await axiosApi.get('/auht/current-user')
+        const {data} = await axiosApi.get('/user/info')
+        console.log(data)
         if (data) {
           console.log("ejec login()")
           login()

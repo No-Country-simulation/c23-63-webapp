@@ -10,6 +10,7 @@ import Page404 from "../pages/Page404";
 
 
 import PageHome from "../pages/Home/PageHome";
+import VerifySession from "../pages/auth/VerifySession";
 
 export function PublicRoutes() {
   return (
@@ -19,7 +20,7 @@ export function PublicRoutes() {
         <Route path='register' element={<Register />}/>
         <Route path='password-recovery' element={<PasswordRecoveryRequest />}/>
         <Route path='password-reset' element={<PasswordResetConfirmation />}/>
-        <Route path='verify-session' element/>
+        <Route path='verify-session' element={<VerifySession/>}/>
       </Route>
       <Route path="/home" element={<PageHome/>}/>
       <Route path='/profile/:id' element={<PageProfile/>}/>
