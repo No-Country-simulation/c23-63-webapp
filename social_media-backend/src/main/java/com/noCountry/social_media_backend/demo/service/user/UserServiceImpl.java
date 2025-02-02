@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -33,7 +34,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User usuarioPorCorreo(String username) {
-        return this.usuarioRepository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+    public User usuarioPorCorreo(String email) {
+        return this.usuarioRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+    }
+
+    @Override
+    public Optional<User> usuarioPorCorreoGoogle(String email) {
+        return this.usuarioRepository.findByEmail(email);
+    }
+
+    @Override
+    public Optional<User> crearUsuarioGoogle(String name, String email) {
+        User nuevoUsuario = User.builder()
+                .username(name)
+                .email(email)
+                .createdAt(LocalDateTime.now())
+                .password("")
+                .role(Role.USER).build();
+        return Optional.of(this.usuarioRepository.save(nuevoUsuario));
     }
 }

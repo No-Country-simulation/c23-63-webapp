@@ -1,7 +1,7 @@
 package com.noCountry.social_media_backend.demo.security.jwt;
 
 
-import com.noCountry.social_media_backend.demo.entity.user.User;
+import com.noCountry.social_media_backend.demo.constant.Role;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -20,20 +20,20 @@ import java.util.function.Function;
 public class JwtService {
     private static final String SECRET_KEY = "B6250655368566B597033733676397924586E3272357538782F413F4428472B4";
 
-    public String getToken(User usuario) {
+    public String getToken(Integer id, String username, Role role) {
         Map<String, Object> extraClaims = new HashMap<>();
-        extraClaims.put("id", usuario.getId());
-        extraClaims.put("role", usuario.getRole());
-        return this.getToken(extraClaims, usuario);
+        extraClaims.put("id", id);
+        extraClaims.put("role", role);
+        return this.getToken(extraClaims, username);
     }
 
-    private String getToken(Map<String, Object> extraClaims, UserDetails user) {
+    private String getToken(Map<String, Object> extraClaims, String username) {
         return Jwts
                 .builder()
                 .setClaims(extraClaims)
-                .setSubject(user.getUsername())
+                .setSubject(username)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 2 ))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 2))
                 .signWith(getKey(), SignatureAlgorithm.HS256)
                 .compact();
     }

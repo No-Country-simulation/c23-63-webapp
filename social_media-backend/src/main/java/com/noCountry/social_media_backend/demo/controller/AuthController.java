@@ -20,20 +20,21 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("login")
-    public ResponseEntity<AuthResponseDto> login(@RequestBody LoginRequestDto loginRequestDto, HttpServletResponse response) {
+//    public ResponseEntity<AuthResponseDto> login(@RequestBody LoginRequestDto loginRequestDto, HttpServletResponse response) {
+    public ResponseEntity<AuthResponseDto> login(@RequestBody LoginRequestDto loginRequestDto) {
         AuthResponseDto authResponseDto = authService.login(loginRequestDto);
-
-        Cookie jwtCookie = new Cookie("token", authResponseDto.getToken());
-
-        jwtCookie.setHttpOnly(true);
-        jwtCookie.setSecure(true);
-        jwtCookie.setPath("/");
-        jwtCookie.setMaxAge(86400);
-
-        response.addCookie(jwtCookie);
-
+//        Cookie jwtCookie = new Cookie("token", authResponseDto.token());
+//
+//        jwtCookie.setHttpOnly(true);
+//        jwtCookie.setSecure(true);
+//        jwtCookie.setPath("/");
+//        jwtCookie.setMaxAge(86400);
+//
+//        response.addCookie(jwtCookie);
         return ResponseEntity.ok(authResponseDto);
     }
+
+
 
     @PostMapping("register")
     public ResponseEntity<ExitoResponseDto> register(@RequestBody UsuarioCrearRequestDto usuarioCrearRequestDto) {

@@ -33,7 +33,7 @@ public class AuthServiceImpl implements AuthService {
         }
 
         User user = this.usuarioService.usuarioPorCorreo(loginRequestDto.email());
-        String token = this.jwtService.getToken(user);
+        String token = this.jwtService.getToken(user.getId(),user.getUsername(),user.getRole());
 
         String roleName = user.getAuthorities().stream()
                 .findFirst()
