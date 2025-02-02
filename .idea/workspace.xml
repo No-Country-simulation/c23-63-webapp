@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b81674-63f0-4aee-9d87-a6b25c12b0a6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/UserProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/infoUser/LinkDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/infoUser/UserProfileRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/UserProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/SocialMediaBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/SocialMediaBackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/security/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-frontend/src/pages/profile/PostsProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-frontend/src/pages/profile/PostsProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-frontend/src/services/profileService.js" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-frontend/src/services/profileService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/entity/user_profile/DTOs/DtoUserProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/media/MediaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/resources/datosperfil.json" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/resources/datosperfil.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -95,7 +97,7 @@
       <workItem from="1738409109714" duration="1621000" />
       <workItem from="1738440896354" duration="5596000" />
       <workItem from="1738448437510" duration="3333000" />
-      <workItem from="1738451807996" duration="2153000" />
+      <workItem from="1738451807996" duration="3023000" />
     </task>
     <servers />
   </component>
