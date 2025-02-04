@@ -41,7 +41,8 @@ export default function Login() {
     event.preventDefault()
     try {
       const response = await authenticateUser(email, password)
-      login(response.data)
+      // login(response.data)
+      login(response)
       resetForm()
       navigate('/')
     } catch (err){

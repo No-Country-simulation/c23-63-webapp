@@ -9,9 +9,10 @@ const errorMessages = {
 
 export const authenticateUser = async (email, password) => {
   try {
-    const { data } = await axiosApi.post('/auth/login', { email,password })
-    
-    return { user: data }
+    const { data } = await axiosApi.post('/auth/login', { email,password })    
+
+    return { user: data.usuarioAuth }
+    // return { user: data }
 
   }catch (err) {
     const message = err?.response
