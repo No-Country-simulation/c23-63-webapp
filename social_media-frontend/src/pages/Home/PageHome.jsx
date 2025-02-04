@@ -4,14 +4,16 @@ import { useAuthContext } from "../../context/AuthContext";
 import PostFeed from "./PostFeed";
 
 export default function PageHome() {
-  const  { logout } = useAuthContext()
+  const  { user ,logout } = useAuthContext()
+  
+  console.log("login success", user)
   return (
     <div className="pb-3">
       <NavBar/>
       <section className=" max-w-screen-xl mx-auto md:grid grid-cols-7 gap-4 justify-center">
-        <aside className="hidden md:flex flex-col col-span-2 px-2 sticky top-[82px] justify-between h-[calc(100vh-94px)] ">
+        <aside className="hidden md:flex flex-col col-span-2 px-2 sticky top-[96px] justify-between h-[calc(100vh-109px)] ">
           <article>
-            <UserInfo id={1} isFeed={true}/>
+            <UserInfo isFeed={true} idParam={1}/>
           </article>
           <section>
             <button 
@@ -30,7 +32,7 @@ export default function PageHome() {
           <PostFeed/>
           <PostFeed/>
         </main>
-        <aside className="hidden lg:flex flex-col col-span-2 max-w-xs gap-4 px-2 sticky top-[82px] self-start">
+        <aside className="hidden lg:flex flex-col col-span-2 max-w-xs gap-4 px-2 sticky top-[96px] self-start">
           <article className=" w-full bg-primary-800 rounded-2xl">
             <h3 className="title p-3">Amigos sugeridos</h3>
             <ul>

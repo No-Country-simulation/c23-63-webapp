@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import IconNewProject from "../../assets/Icons/IconNewProject"
-import { getPostsByProfileId } from "../../services/profileService"
+import IconNewProject from "../../assets/Icons/IconNewProject";
+
+import { useAuthContext } from "../../context/AuthContext";
+import { getPostsByProfileId } from "../../services/profileService";
 
 export default function PostsProfile({id , setShowCreateForm}){
   const [posts, setPosts] = useState([]);
   const [countPosts, setCountPosts] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [errorMsg, setErrorMsg] = useState('')
+
+  const {isAuthenticated} = useAuthContext()
 
   useEffect(()=>{
     const getData = async () => {
@@ -15,7 +20,7 @@ export default function PostsProfile({id , setShowCreateForm}){
         setPosts(posts);
         setCountPosts(countPosts);
       } catch (error) {
-        console.error('Error al obtener los posts:', error);
+        setErrorMsg(error.message)
       } finally {
         setLoading(false);
       }
@@ -25,46 +30,64 @@ export default function PostsProfile({id , setShowCreateForm}){
   },[id])
 
   if(loading){
-    return <p>Cargando...</p>
+    return (
+      <div className="w-full h-96 flex justify-center items-center">
+        <div className="loader"></div>
+      </div>
+    )
   }
 
   return(
     <>
-      <header className="flex gap-2">
-        {
-          countPosts 
-            ? <p className="paragraph">{countPosts} publicaciones</p>
-            : <p className="paragraph">No hay publicaciones</p>
-        }
-      </header>
-      <section className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-        <button 
-          className="bg-primary-800 rounded-xl col-span-1 flex flex-col gap-2 justify-center items-center"
-          onClick={()=>{setShowCreateForm(true)}}
-        >
-          <IconNewProject/>
-          <span className="paragraph">Agregar nuevo post</span>
-        </button>
-        {
-          posts && posts.map((post, index) => (
-            <article key={index} className="">
-              <figure>
-                <img src={post.description.imageUrl} alt="Post"
-                  className="w-full aspect-3/2 object-cover rounded-xl"
-                />
-              </figure>
-              <section className="bg-primary-800 -mt-4 pt-8 p-4 rounded-xl min-h-24 grid items-center">
-                <p className="paragraph">
-                  {post.description.title}
-                </p>
+      {
+        errorMsg 
+        ? (
+            <p className="w-full text-center text-white/50 py-8">{errorMsg}</p>
+          )
+        : (
+            <> 
+            <header className="flex gap-2 mt-4">
+              <p className="paragraph p-2">
                 {
-                  post.category && <p className="paragraph-s">{post.category}</p>
+                  countPosts 
+                    ? `${countPosts} publicaciones`
+                    : 'No hay publicaciones'
                 }
-              </section>
-            </article>
-          ))
-        }
-      </section>
+              </p>
+            </header>
+            <section className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+              {
+                isAuthenticated && <button 
+                  className="bg-primary-800 rounded-xl col-span-1 flex flex-col gap-2 justify-center items-center min-h-64"
+                  onClick={()=>{setShowCreateForm(true)}}
+                >
+                  <IconNewProject/>
+                  <span className="paragraph">Agregar nuevo post</span>
+                </button>
+              }
+              {
+                posts && posts.map((post, index) => (
+                  <article key={index} className="">
+                    <figure>
+                      <img src={post.description.imageUrl} alt="Post"
+                        className="w-full aspect-2/1 object-cover rounded-xl"
+                      />
+                    </figure>
+                    <section className="bg-primary-800 -mt-4 pt-8 p-4 rounded-xl min-h-24 grid items-center">
+                      <p className="paragraph">
+                        {post.description.title}
+                      </p>
+                      {
+                        post.category && <p className="paragraph-s">{post.category}</p>
+                      }
+                    </section>
+                  </article>
+                ))
+              }
+            </section>
+            </>
+          )
+      }
     </>
   )
 }

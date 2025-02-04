@@ -1,6 +1,9 @@
 import profiles from '../models/profiles.json'
 // import posts from '../models/posts_profile.json'
 import axiosApi from './axiosApi'
+import { ERROR_MESSAGES } from './errorMessages'
+
+
 
 export const getProfileById = (id) => {
   const profile = profiles.profiles.find(
@@ -10,10 +13,10 @@ export const getProfileById = (id) => {
 }
 
 // export const getPostsByProfileId = (id) => {
-//   if(posts.posts_profile.user_id === parseInt(id)) {
+//   if(posts.postsProfile.userId === parseInt(id)) {
 //     return { 
-//       count_posts: posts.posts_profile.count_posts,
-//       posts: posts.posts_profile.posts
+//       countPosts: posts.postsProfile.countPosts,
+//       posts: posts.postsProfile.posts
 //     }
 //   }else {
 //     return{}
@@ -23,10 +26,11 @@ export const getProfileById = (id) => {
 export const getPostsByProfileId = async (id) => {
   try {
     const response = await axiosApi.get(`api/posts/${id}`)
-    console.log(response)
-    console.log(response.data)
     return response.data
   }catch(err){
-    console.log(err)
+    const message = err?.response
+      ? ERROR_MESSAGES[err.response.status] || ERROR_MESSAGES.default
+      : ERROR_MESSAGES.connectionError
+    throw new Error(message)
   }
 }
