@@ -1,7 +1,7 @@
 {
-  "posts_profile": {
-    "user_id": 1,
-    "count_posts": 9,
+  "postsProfile": {
+    "userId": 1,
+    "countPosts": 9,
     "posts": [
       {
         "post_id": 1,

@@ -9,6 +9,7 @@ export default {
       colors: {
         'primary-100': '#9766D3',
         'primary-200': '#8B5CC3',
+        'primary-400': '#5F3F84',
         'primary-600': '#462E62',
         'primary-800': '#1C1028'
       },
@@ -31,6 +32,7 @@ export default {
         'thin': 300,
       },
       aspectRatio:{
+        '2/1':'2/1',
         '3/2': '3/2',
         '4/3': '4/3'
       }

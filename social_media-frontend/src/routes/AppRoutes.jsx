@@ -7,8 +7,8 @@ export default function AppRoutes () {
   return (
     <AuthProvider>
       <Routes>
-        {PrivateRoutes()}
         {PublicRoutes()}
+        {PrivateRoutes()}
       </Routes>
   </AuthProvider>
   )
