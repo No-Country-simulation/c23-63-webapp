@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { createPost } from "../../services/posts";
+// import { useAuthContext } from "../../context/AuthContext";
 
 export default function CreateNewPost ({ setShowCreateForm }){
+
   const titleRef = useRef()
 
   const [image, setImage] = useState(null)
@@ -47,8 +49,10 @@ export default function CreateNewPost ({ setShowCreateForm }){
     }
     
     const formData = new FormData()
+    formData.append('userId', 3 )
     formData.append("image", image)
     formData.append("title", title)
+    formData.append('content', content)
     formData.append("category", JSON.stringify(tags))
     
     try {
