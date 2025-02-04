@@ -1,53 +1,71 @@
+
 package com.noCountry.social_media_backend.demo.security.jwt;
 
-import com.noCountry.social_media_backend.demo.security.jwt.JwtService;
+import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.security.core.Authentication;
+import lombok.RequiredArgsConstructor;
+import org.springframework.lang.NonNull;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
+import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import java.io.IOException;
 
+
 @Component
+@RequiredArgsConstructor
 public class JwtCookieFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
-
-    public JwtCookieFilter(JwtService jwtService) {
-        this.jwtService = jwtService;
-    }
+    private final UserDetailsService userDetailsService;
+    private final HandlerExceptionResolver handlerExceptionResolver;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-            throws ServletException, IOException {
+    protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {
+        try {
 
-        // Obtener el usuario autenticado desde el contexto de seguridad
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            final String username;
 
-        if (authentication != null && authentication.isAuthenticated()) {
-            // Obtener el usuario (por ejemplo, el nombre de usuario o el objeto User)
-            String username = authentication.getName();  // Asumiendo que el username está en el Authentication
+            Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if ("SESSION_TOKEN".equals(cookie.getName())) {
 
-            // Crear el token JWT utilizando JwtService
-            //String jwtToken = jwtService.getToken(username);
-            // Crear la cookie con el JWT
-           // Cookie cookie = new Cookie("JWT_TOKEN", jwtToken);
-            //cookie.setHttpOnly(true); // Evita acceso desde JavaScript
-            //cookie.setSecure(true);   // Solo si estás utilizando HTTPS
-            //cookie.setPath("/");      // Asegúrate de que sea accesible en toda la aplicación
-            //cookie.setMaxAge(60 * 60 * 24); // 1 día
+                        String token = cookie.getValue();
+                        username = jwtService.getUsernameFromToken(token);
 
-            // Añadir la cookie a la respuesta
-           // response.addCookie(cookie);
+                        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                            if (jwtService.isTokenValid(token, userDetails)) {
+                                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+                                        userDetails,
+                                        null,
+                                        userDetails.getAuthorities());
+
+                                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+
+                                // info -> Si no se ejecuta retorna un error 403
+                                SecurityContextHolder.getContext().setAuthentication(authToken);
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            filterChain.doFilter(request, response);
+
+        } catch (ExpiredJwtException expiredJwtException) {
+            handlerExceptionResolver.resolveException(request, response, null, new ExpiredJwtException(expiredJwtException.getHeader(), expiredJwtException.getClaims(), "Expiró la sesión."));
         }
 
-        // Continuar con el siguiente filtro
-        filterChain.doFilter(request, response);
     }
 }

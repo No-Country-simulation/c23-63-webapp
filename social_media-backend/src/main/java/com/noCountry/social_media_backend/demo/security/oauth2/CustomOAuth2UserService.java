@@ -1,8 +1,7 @@
-package com.noCountry.social_media_backend.demo.service;
+package com.noCountry.social_media_backend.demo.security.oauth2;
 
 import com.noCountry.social_media_backend.demo.entity.user.User;
 import com.noCountry.social_media_backend.demo.service.user.UserService;
-import com.noCountry.social_media_backend.demo.service.user.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
