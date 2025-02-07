@@ -97,7 +97,7 @@ public class PostService {
 
             UserDataDTO userDataDTO = new UserDataDTO(
                     user.getId(),
-                    profile != null ? profile.getName() : user.getUsername(),
+                    profile != null ? user.getUsername() : null,
                     profile != null ? profile.getProfilePhoto() : null
             );
 

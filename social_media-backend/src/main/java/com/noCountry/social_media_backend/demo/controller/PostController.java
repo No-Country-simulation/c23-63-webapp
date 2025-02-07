@@ -32,8 +32,8 @@ public class PostController {
 
     @PostMapping(value = "/create", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<Post> createPost(
-            @RequestParam("file") MultipartFile file,
             @RequestParam("userId") Integer userId,
+            @RequestParam("file") MultipartFile file,
             @RequestParam("title") String title,
             @RequestParam("content") String content,
             @RequestParam("category") String category) {

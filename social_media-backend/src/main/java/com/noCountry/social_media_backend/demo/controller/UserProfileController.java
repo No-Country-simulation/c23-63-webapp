@@ -23,11 +23,14 @@ public class UserProfileController {
         return ResponseEntity.status(HttpStatus.CREATED).body(userProfile);
     }
 
-   @GetMapping("/{userId}")
-   public ResponseEntity<UserProfileResponseDTO> getUserProfile(@PathVariable Integer userId, @RequestParam Integer sessionId) {
+    @GetMapping("/{userId}")
+    public ResponseEntity<UserProfileResponseDTO> getUserProfile(
+            @PathVariable Integer userId,
+            @RequestParam Integer sessionId) {
+
         UserProfileResponseDTO response = userProfileService.getUserProfile(userId, sessionId);
         return ResponseEntity.ok(response);
-   }
+    }
 
 
 

@@ -64,7 +64,7 @@ public class UserProfileService {
        boolean isFriend = friendService.areFriends(userId,sessionId);
         int friendsCount = friendService.countFriends(userId);
 
-       UserProfile userProfile = userProfileRepository.findById(sessionId)
+       UserProfile userProfile = userProfileRepository.findById(userId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User Profile not found"));
 
         User user = userRepository.findById(userId)

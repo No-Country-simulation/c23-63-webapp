@@ -7,12 +7,12 @@
     <list default="true" id="54b81674-63f0-4aee-9d87-a6b25c12b0a6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/FriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/FriendController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/PostController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/entity/user_profile/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/entity/user_profile/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/entity/user/DTOs/DtoUser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/repository/FriendRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/repository/FriendRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/security/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/UserProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/UserProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/friend/FriendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/friend/FriendService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/post/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/post/PostService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +110,7 @@
       <workItem from="1738877182786" duration="3292000" />
       <workItem from="1738885393823" duration="800000" />
       <workItem from="1738886259878" duration="311000" />
-      <workItem from="1738886899296" duration="7238000" />
+      <workItem from="1738886899296" duration="9629000" />
     </task>
     <servers />
   </component>
