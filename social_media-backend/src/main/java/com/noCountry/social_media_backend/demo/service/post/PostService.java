@@ -16,8 +16,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -48,7 +48,7 @@ public class PostService {
                 new PostDTO(
                         post.getId(),
                         post.getCreatedAt(),
-                        new DescriptionDTO(post.getTitle(),post.getImageUrl()),
+                        new DescriptionDTO(post.getTitle(),post.getContent(),post.getImageUrl()),
                         post.getCategory()
                 )
         ).collect(Collectors.toList());
@@ -97,7 +97,7 @@ public class PostService {
 
             UserDataDTO userDataDTO = new UserDataDTO(
                     user.getId(),
-                    profile != null ? user.getUsername(),
+                    profile != null ? profile.getName() : user.getUsername(),
                     profile != null ? profile.getProfilePhoto() : null
             );
 
@@ -115,5 +115,18 @@ public class PostService {
                     categories
             );
         }).toList();
+    }
+
+    public PostDTO getPostByPostId(Integer postId) {
+        Post post = postRepository.findById(postId)
+                .orElseThrow(() -> new RuntimeException("Post no encontrado con ID: " + postId));
+
+        return new PostDTO(
+                post.getId(),
+                post.getCreatedAt(),
+                new DescriptionDTO(post.getTitle(), post.getContent(), post.getImageUrl()),
+                post.getCategory()
+        );
+
     }
 }

@@ -1,9 +1,6 @@
 package com.noCountry.social_media_backend.demo.controller;
 
-import com.noCountry.social_media_backend.demo.dto.posts.FeedResponseDTO;
-import com.noCountry.social_media_backend.demo.dto.posts.PostDTO;
-import com.noCountry.social_media_backend.demo.dto.posts.PostRequestDTO;
-import com.noCountry.social_media_backend.demo.dto.posts.PostResponseDTO;
+import com.noCountry.social_media_backend.demo.dto.posts.*;
 import com.noCountry.social_media_backend.demo.entity.post.Post;
 import com.noCountry.social_media_backend.demo.service.post.PostService;
 import org.springframework.http.HttpStatus;
@@ -12,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.time.Instant;
 import java.util.List;
 
 @RestController
@@ -42,11 +38,15 @@ public class PostController {
             @RequestParam("content") String content,
             @RequestParam("category") String category) {
 
-
         PostRequestDTO postRequestDTO = new PostRequestDTO(userId, title, content, category);
 
         Post newPost = postService.savePost(postRequestDTO, file);
         return ResponseEntity.status(HttpStatus.CREATED).body(newPost);
+    }
+
+    @GetMapping("/{postId}")
+    public PostDTO getPostByPostId(@PathVariable Integer postId) {
+        return ResponseEntity.ok(postService.getPostByPostId(postId)).getBody();
     }
 
 }

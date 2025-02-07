@@ -23,11 +23,11 @@ public class UserProfileController {
         return ResponseEntity.status(HttpStatus.CREATED).body(userProfile);
     }
 
-  /// @GetMapping("/{userId}")
+   ///@GetMapping("/{userId}")
    // public ResponseEntity<UserProfileResponseDTO> getUserProfile( @PathVariable Integer userId, @RequestParam Integer viewerId) {
-   //     UserProfileResponseDTO response = userProfileService.getUserProfile(userId, viewerId);
+    //    UserProfileResponseDTO response = userProfileService.getUserProfile(userId, viewerId);
 //
-   //    return ResponseEntity.ok(response);
+     //  return ResponseEntity.ok(response);
   // }
 
 
