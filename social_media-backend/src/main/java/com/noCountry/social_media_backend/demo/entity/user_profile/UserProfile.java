@@ -25,9 +25,6 @@ public class UserProfile {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "name", length = 50)
-    private String name;
-
     @Column(name = "profile_photo", length = 255)
     private String profilePhoto;
 

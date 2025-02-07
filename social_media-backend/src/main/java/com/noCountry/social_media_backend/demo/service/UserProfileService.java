@@ -29,13 +29,17 @@ public class UserProfileService {
         this.friendService = friendService;
     }
 
-    public UserProfile createUserProfile(UserProfileRequestDTO userProfileRequestDTO) {
+    public UserProfile updateUserProfile(UserProfileRequestDTO userProfileRequestDTO) {
         User user = userRepository.findById(userProfileRequestDTO.userId())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
+        if (!user.getUsername().equals(userProfileRequestDTO.name())) {
+            user.setUsername(userProfileRequestDTO.name());
+            userRepository.save(user);
+        }
+
         UserProfile userProfile = UserProfile.builder()
                 .user(user)
-                .name(userProfileRequestDTO.name())
                 .jobTitle(userProfileRequestDTO.jobTitle())
                 .discordLink(getLinkByType(userProfileRequestDTO.links(), "discord"))
                 .linkedinLink(getLinkByType(userProfileRequestDTO.links(), "linkedin"))
@@ -53,13 +57,14 @@ public class UserProfileService {
                 .filter(link -> link.type().equalsIgnoreCase(type))
                 .map(LinkDTO::url)
                 .findFirst()
-                .orElse(null);  // Si no se encuentra, devuelve null
+                .orElse(null);
     }
 
-    public void getUserProfile(Integer userId, Integer viewerId) {
-       boolean isFriend = friendService.areFriends(userId,viewerId);
+    public UserProfileResponseDTO getUserProfile(Integer userId, Integer sessionId) {
+       boolean isFriend = friendService.areFriends(userId,sessionId);
+        int friendsCount = friendService.countFriends(userId);
 
-       UserProfile userProfile = userProfileRepository.findById(viewerId)
+       UserProfile userProfile = userProfileRepository.findById(sessionId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User Profile not found"));
 
         User user = userRepository.findById(userId)
@@ -73,7 +78,13 @@ public class UserProfileService {
         links.add(new LinkDTO("youtube", userProfile.getYoutubeLink()));
         links.add(new LinkDTO("personal", userProfile.getPersonalLink()));
 
-
+        return new UserProfileResponseDTO(
+                user.getUsername(),
+                userProfile.getJobTitle(),
+                friendsCount,
+                isFriend,
+                links
+        );
 
 
     }

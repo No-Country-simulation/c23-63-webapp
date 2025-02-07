@@ -13,4 +13,7 @@ public interface FriendRepository extends JpaRepository<Friend, Integer> {
             "f.user.id = :friendId AND f.friend.id = :userId) " +
             "AND f.status = 'ACCEPTED'")
     boolean areFriends(@Param("userId") Integer userId, @Param("friendId") Integer friendId);
+
+    @Query("SELECT COUNT(f) FROM Friend f WHERE f.user.id = :userId AND f.status = 'ACCEPTED'")
+    int countFriends(@Param("userId") Integer userId);
 }

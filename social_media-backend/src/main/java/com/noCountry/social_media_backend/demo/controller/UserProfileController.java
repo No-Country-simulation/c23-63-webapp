@@ -18,17 +18,16 @@ public class UserProfileController {
     }
 
     @PostMapping("/update")
-    public ResponseEntity<UserProfile> createUserProfile(@RequestBody UserProfileRequestDTO userProfileRequestDTO) {
-        UserProfile userProfile = userProfileService.createUserProfile(userProfileRequestDTO);
+    public ResponseEntity<UserProfile> updateUserProfile(@RequestBody UserProfileRequestDTO userProfileRequestDTO) {
+        UserProfile userProfile = userProfileService.updateUserProfile(userProfileRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(userProfile);
     }
 
-   ///@GetMapping("/{userId}")
-   // public ResponseEntity<UserProfileResponseDTO> getUserProfile( @PathVariable Integer userId, @RequestParam Integer viewerId) {
-    //    UserProfileResponseDTO response = userProfileService.getUserProfile(userId, viewerId);
-//
-     //  return ResponseEntity.ok(response);
-  // }
+   @GetMapping("/{userId}")
+   public ResponseEntity<UserProfileResponseDTO> getUserProfile(@PathVariable Integer userId, @RequestParam Integer sessionId) {
+        UserProfileResponseDTO response = userProfileService.getUserProfile(userId, sessionId);
+        return ResponseEntity.ok(response);
+   }
 
 
 

@@ -22,4 +22,8 @@ public class FriendService {
         }
         return friendRepository.areFriends(userId, friendId);
     }
+
+    public int countFriends(Integer userId) {
+        return friendRepository.countFriends(userId);
+    }
 }
