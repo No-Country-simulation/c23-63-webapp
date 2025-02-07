@@ -15,11 +15,23 @@
 }
 
 @layer utilities {
+  .button-filled{
+    @apply bg-primary-200 w-full px-5 py-3 rounded-2xl text-16 font-medium font-popins
+  }
+  .button-border{
+    @apply w-full border-[1px] border-white px-5 py-3 rounded-2xl text-16 font-medium font-popins
+  }
   .active{
-    @apply bg-primary-100 
+    @apply bg-primary-100/80 border-none
+  }
+  .default{
+    @apply bg-primary-100/30
+  }
+  .link-navbar {
+    @apply font-popins text-16 font-regular px-5 py-3 rounded-xl block
   }
 
-  .name {
+  .h1-sen {
     @apply font-sen text-24 font-regular
   }
   .name-post{
@@ -28,10 +40,13 @@
   .title-post{
     @apply font-sen text-24 font-bold
   }
-  .tag-post{
-    @apply font-sen text-16 font-regular text-primary-100
+  .content-post{
+    @apply font-sen text-16 font-regular
   }
 
+  .h1-pop{
+    @apply font-popins text-24 font-bold
+  }
   .title{
     @apply font-popins text-20 font-regular
   }
@@ -50,9 +65,13 @@
   .input {
     @apply w-full p-3 rounded-2xl paragraph text-gray-400 border-2 border-transparent focus:outline-none focus:border-primary-100
   }
-  .link-navbar {
-    @apply font-popins text-16 font-regular px-5 py-3 rounded-xl
+  .button-user-info{
+    @apply w-full md:py-2 md:px-8 p-3 rounded-xl bg-primary-200
   }
+  .is-friend{
+    @apply bg-primary-600
+  }
+  
   
   .loader {
     width: 60px;

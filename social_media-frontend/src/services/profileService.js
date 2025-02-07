@@ -3,23 +3,33 @@ import profiles from '../models/profiles.json'
 import axiosApi from './axiosApi'
 import { ERROR_MESSAGES } from './errorMessages'
 
-
-
-export const getProfileById = (id) => {
+export const getProfileById = ( idParam, sessionId) => {
+  console.log(sessionId)
   const profile = profiles.profiles.find(
-    (currentProfile) => currentProfile.user_id === parseInt(id)
+    (currentProfile) => currentProfile.userId.toString() === idParam.toString()
   )
   return profile || null
 }
 
+// export const getProfileById = async (id, sessionId) => {
+//   try {
+//     return await axiosApi.get(`profile/${id}`,{sessionId})
+//   }catch(e) {
+//     const message = e?.response
+//       ? ERROR_MESSAGES[e.response.status] || ERROR_MESSAGES.default
+//       : ERROR_MESSAGES.connectionError
+//     throw new Error(message)
+//   }
+// }
+
 // export const getPostsByProfileId = (id) => {
-//   if(posts.postsProfile.userId === parseInt(id)) {
-//     return { 
-//       countPosts: posts.postsProfile.countPosts,
-//       posts: posts.postsProfile.posts
-//     }
+//   const postsProfile = posts.find(
+//     (current) => current.userId.toString() === id.toString()
+//   )
+//   if(postsProfile) {
+//     return postsProfile
 //   }else {
-//     return{}
+//     throw new Error("No hay datos")
 //   }
 // }
 
@@ -27,10 +37,23 @@ export const getPostsByProfileId = async (id) => {
   try {
     const response = await axiosApi.get(`api/posts/${id}`)
     return response.data
-  }catch(err){
-    const message = err?.response
-      ? ERROR_MESSAGES[err.response.status] || ERROR_MESSAGES.default
+  }catch(e){
+    const message = e?.response
+      ? ERROR_MESSAGES[e.response.status] || ERROR_MESSAGES.default
       : ERROR_MESSAGES.connectionError
     throw new Error(message)
   }
 }
+
+export const followUser = async (friendId, sessionId, state) => {
+  try {
+    return state
+      ? await axiosApi.post("/follow", { sessionId, friendId })
+      : await axiosApi.delete(`/follow/${sessionId}/${friendId}`)
+  } catch (e) {
+    const message = e?.response
+      ? ERROR_MESSAGES[e.response.status] || ERROR_MESSAGES.default
+      : ERROR_MESSAGES.connectionError;
+    throw new Error(message);
+  }
+};

@@ -1,23 +1,43 @@
 {
   "posts": [
     {
-      "id": 1,
-      "user_id": 1,
-      "publish_date": "2021-09-01T00:00:00Z",
-      "content": [
-        {
-          "text": "This is my first post",
-          "media_url": "https://avatars.githubusercontent.com/u/1?v=4"
-        }
-      ],
-      "engagement": [
-        {
-          "comments_count": 0,
-          "likes_count": 0,
-          "shares_count": 0
-        }
-      ],
-      "hashtags": ["#first", "#post"]
+      "postId": 1,
+      "userData": {
+        "userId": 1,
+        "userName": "Juanito Alimaña",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/1?v=4"
+      },
+      "content":{
+        "title": "Mi primer post sobre React",
+        "imageUrl": "https://img.freepik.com/foto-gratis/programador-bebiendo-taza-cafe-manana-mientras-construye-cortafuegos_482257-104079.jpg?t=st=1738721874~exp=1738725474~hmac=dcaca3f601a1717e54d5cc2c2ddb1650267cf0853614b2608a7153c298e1c315&w=740"
+      },
+      "category": ["React", "Frontend"]
+    },
+    {
+      "postId": 2,
+      "userData": {
+        "userId": 2,
+        "userName": "Carlos Antonio",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/2?v=4"
+      },
+      "content":{
+        "title": "Explorando el universo con JavaScript",
+        "imageUrl": "https://img.freepik.com/foto-gratis/vista-superior-pirata-informatico-irreconocible-que-realiza-ciberataque-noche_1098-18706.jpg?t=st=1738721542~exp=1738725142~hmac=0e76013e8cd6570960340c92fa05618617f570f799f4f016f6e6e754fa51656d&w=740"
+      },
+      "category": ["JavaScript", "Data Visualization"]
+    },
+    {
+      "postId": 3,
+      "userData": {
+        "userId": 3,
+        "userName": "Maria de los Ángeles",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/3?v=4"
+      },
+      "content":{
+        "title": "Mis vacaciones en Costa Rica",
+        "imageUrl": "https://img.freepik.com/foto-gratis/naturaleza-turismo-personas-joven-turista-descalzo-jeans-cortos-mochila-sentado-gran-roca-interior-selva-verde_273609-1610.jpg?t=st=1738721991~exp=1738725591~hmac=043597bac29bc6140b9ef47726d68e50255721eb444bd438096bfc43ee00a01c&w=1380"
+      }, 
+      "category": ["Travel", "Photography"]
     }
   ]
 }

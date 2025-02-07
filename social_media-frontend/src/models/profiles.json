@@ -1,10 +1,10 @@
 {
   "profiles": [
     {
-      "user_id": 1,
+      "userId": 1,
       "name": "First User",
       "job": "Frontend Developer",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/1?v=4",
       "links": [
         {
           "type": "discord",
@@ -31,13 +31,14 @@
           "url": "https://youtube.com"
         }
       ],
-      "friends": 205
+      "friends": 205,
+      "isFriend": null
     },
     {
-      "user_id": 2,
+      "userId": 2,
       "name": "Second User",
       "job": "QA Engineer",
-      "avatar_url": "https://avatars.githubusercontent.com/u/2?v=4",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/2?v=4",
       "links": [
         {
           "type": "discord",
@@ -64,13 +65,14 @@
           "url": "https://youtube.com"
         }
       ],
-      "followers": 130
+      "followers": 130,
+      "isFriend": true
     },
     {
-      "user_id": 3,
+      "userId": 3,
       "name": "Third User",
       "job": "UX Designer",
-      "avatar_url": "https://avatars.githubusercontent.com/u/3?v=4",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/3?v=4",
       "links": [
         {
           "type": "discord",
@@ -97,13 +99,14 @@
           "url": "https://youtube.com"
         }
       ],
-      "followers": 145
+      "followers": 145,
+      "isFriend": false
     },
     {
-      "user_id": 4,
+      "userId": 4,
       "name": "Fourth User",
       "job": "Backend Developer",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4?v=4",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/4?v=4",
       "links": [
         {
           "type": "discord",
@@ -130,7 +133,8 @@
           "url": "https://youtube.com"
         }
       ],
-      "followers": 87
+      "followers": 87,
+      "isFriend": true
     }
   ]
 }

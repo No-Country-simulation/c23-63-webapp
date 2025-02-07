@@ -3,6 +3,7 @@ import IconNewProject from "../../assets/Icons/IconNewProject";
 
 import { useAuthContext } from "../../context/AuthContext";
 import { getPostsByProfileId } from "../../services/profileService";
+import { Link } from "react-router-dom";
 
 export default function PostsProfile({id , setShowCreateForm}){
   const [posts, setPosts] = useState([]);
@@ -10,13 +11,13 @@ export default function PostsProfile({id , setShowCreateForm}){
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState('')
 
-  const {isAuthenticated} = useAuthContext()
+  const {user, isAuthenticated} = useAuthContext()
 
   useEffect(()=>{
     const getData = async () => {
       try {
         const { posts, countPosts } = await getPostsByProfileId(id);
-        console.log(posts)
+        // console.log(posts)
         setPosts(posts);
         setCountPosts(countPosts);
       } catch (error) {
@@ -46,7 +47,7 @@ export default function PostsProfile({id , setShowCreateForm}){
           )
         : (
             <> 
-            <header className="flex gap-2 mt-4">
+            <header className="flex gap-2">
               <p className="paragraph p-2">
                 {
                   countPosts 
@@ -57,7 +58,7 @@ export default function PostsProfile({id , setShowCreateForm}){
             </header>
             <section className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
               {
-                isAuthenticated && <button 
+                (isAuthenticated && user.id.toString() === id) && <button 
                   className="bg-primary-800 rounded-xl col-span-1 flex flex-col gap-2 justify-center items-center min-h-64"
                   onClick={()=>{setShowCreateForm(true)}}
                 >
@@ -68,19 +69,21 @@ export default function PostsProfile({id , setShowCreateForm}){
               {
                 posts && posts.map((post, index) => (
                   <article key={index} className="">
-                    <figure>
-                      <img src={post.description.imageUrl} alt="Post"
-                        className="w-full aspect-2/1 object-cover rounded-xl"
-                      />
-                    </figure>
-                    <section className="bg-primary-800 -mt-4 pt-8 p-4 rounded-xl min-h-24 grid items-center">
-                      <p className="paragraph">
-                        {post.description.title}
-                      </p>
-                      {
-                        post.category && <p className="paragraph-s">{post.category}</p>
-                      }
-                    </section>
+                    <Link to={`/post/${post.postId}`}>
+                      <figure>
+                        <img src={post.description.imageUrl} alt="Post"
+                          className="w-full aspect-2/1 object-cover rounded-xl"
+                        />
+                      </figure>
+                      <section className="bg-primary-800 -mt-4 pt-8 p-4 rounded-xl min-h-24 grid items-center">
+                        <p className="paragraph">
+                          {post.description.title}
+                        </p>
+                        {
+                          post.category && <p className="paragraph-s">{post.category}</p>
+                        }
+                      </section>
+                    </Link>
                   </article>
                 ))
               }

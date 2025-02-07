@@ -9,7 +9,7 @@ import { authenticateUser } from '../../services/authService'
 
 
 export default function Login() {
-  const { login, login2 } = useAuthContext()
+  const { login } = useAuthContext()
 
   const navigate = useNavigate()
   const emailRef = useRef()
@@ -41,7 +41,6 @@ export default function Login() {
     event.preventDefault()
     try {
       const response = await authenticateUser(email, password)
-      // login(response.data)
       login(response)
       resetForm()
       navigate('/')
@@ -92,7 +91,6 @@ export default function Login() {
         <Link className="text-primary-100 paragraph-s" to="/auth/password-recovery">Olvidé mi contraseña</Link>
         <div className="mt-auto w-full grid justify-items-center gap-4">
           <button className="bg-primary-200 w-full p-3 rounded-2xl text-16 font-medium font-popins">Ingresar</button>
-          <button className="bg-primary-200 w-full p-3 rounded-2xl text-16 font-medium font-popins" onClick={login2}>Login Fake</button>
           <p className="paragraph-s">¿No tienes cuenta aún? <Link className="text-primary-100" to='/auth/register'>Registrate aquí</Link></p>
         </div>
       </BaseForm>   

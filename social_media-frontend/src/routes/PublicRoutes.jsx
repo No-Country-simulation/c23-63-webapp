@@ -10,6 +10,7 @@ import PageProfile from "../pages/Profile/PageProfile";
 import PageHome from "../pages/home/PageHome";
 
 import VerifySession from "../pages/auth/VerifySession";
+import PagePost from "../pages/post/PagePost";
 
 export function PublicRoutes() {
   return (
@@ -25,6 +26,7 @@ export function PublicRoutes() {
       </Route>
       <Route path="/home" element={<PageHome/>}/>
       <Route path='/profile/:id' element={<PageProfile/>}/>
+      <Route path="/post/:id" element={<PagePost/>}/>
       <Route path="*" element={<Page404 />} />
     </>
   )

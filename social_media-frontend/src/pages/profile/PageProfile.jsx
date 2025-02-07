@@ -15,10 +15,10 @@ export default function PageProfile() {
 
 
   return (
-    <div className=" gap-4 justify-center grid-cols-1 pb-3">
+    <>
       <NavBar/>
       <UserInfo idParam={id}/>
-      <main className="px-3 max-w-[1200px] lg:mx-auto min-h-96">      
+      <main className="p-3 max-w-[1200px] lg:mx-auto min-h-96">      
         {
           showCreateForm 
           ? (
@@ -29,6 +29,6 @@ export default function PageProfile() {
             )
         }
       </main>             
-    </div>
+    </>
   )
 }
