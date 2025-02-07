@@ -83,7 +83,7 @@ public class SecurityConfig {
             jwtCookie.setMaxAge(60 * 60 * 24); // 24 horas
 
             response.addCookie(jwtCookie);
-            response.sendRedirect("http://localhost:5173/verify-session");
+            response.sendRedirect("http://localhost:5173/auth/verify-session");
         };
     }
 }

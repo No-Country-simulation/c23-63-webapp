@@ -5,7 +5,6 @@ import com.noCountry.social_media_backend.demo.dto.infoUser.UserProfileRequestDT
 import com.noCountry.social_media_backend.demo.dto.infoUser.UserProfileResponseDTO;
 import com.noCountry.social_media_backend.demo.entity.user.User;
 import com.noCountry.social_media_backend.demo.entity.user_profile.UserProfile;
-import com.noCountry.social_media_backend.demo.repository.FriendRepository;
 import com.noCountry.social_media_backend.demo.repository.UserProfileRepository;
 import com.noCountry.social_media_backend.demo.repository.UserRepository;
 import com.noCountry.social_media_backend.demo.service.friend.FriendService;
@@ -23,7 +22,7 @@ public class UserProfileService {
     private final UserRepository userRepository;
     private final FriendService friendService;
 
-    public UserProfileService(UserProfileRepository userProfileRepository, UserRepository userRepository,FriendService friendService) {
+    public UserProfileService(UserProfileRepository userProfileRepository, UserRepository userRepository, FriendService friendService) {
         this.userProfileRepository = userProfileRepository;
         this.userRepository = userRepository;
         this.friendService = friendService;
@@ -61,10 +60,10 @@ public class UserProfileService {
     }
 
     public UserProfileResponseDTO getUserProfile(Integer userId, Integer sessionId) {
-       boolean isFriend = friendService.areFriends(userId,sessionId);
+        boolean isFriend = friendService.areFriends(userId, sessionId);
         int friendsCount = friendService.countFriends(userId);
 
-       UserProfile userProfile = userProfileRepository.findById(userId)
+        UserProfile userProfile = userProfileRepository.findById(userId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User Profile not found"));
 
         User user = userRepository.findById(userId)

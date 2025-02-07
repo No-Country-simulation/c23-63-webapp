@@ -84,7 +84,8 @@ public class PostService {
             Path filePath = Paths.get(UPLOAD_DIR, filename);
             Files.createDirectories(filePath.getParent());
             file.transferTo(filePath.toFile());
-            return "/uploads/" + filename;
+            return filePath.toString();
+            //return "/uploads/" + filename;
         } catch (IOException e) {
             throw new RuntimeException("Error al guardar la imagen", e);
         }
