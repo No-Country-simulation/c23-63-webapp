@@ -4,8 +4,8 @@ import java.util.List;
 
 public record PostRequestDTO(
         Integer userId,
-        String createdAt,
-        DescriptionDTO description,
-        List<String> category
+        String title,
+        String content,
+        String category
 ) {
 }

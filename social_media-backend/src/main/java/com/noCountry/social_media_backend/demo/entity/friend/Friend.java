@@ -31,7 +31,7 @@ public class Friend {
     private User friend;
 
     @Column(length = 20, nullable = false)
-    private String status = "PENDING";
+    private String status;
 
     @Builder.Default
     @Column(name = "created_at", nullable = false, updatable = false)

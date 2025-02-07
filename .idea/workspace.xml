@@ -5,14 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b81674-63f0-4aee-9d87-a6b25c12b0a6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/UserProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/infoUser/LinkDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/infoUser/UserProfileRequestDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/UserProfileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/FriendController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/infoUser/UserProfileResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/posts/ContentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/posts/FeedResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/posts/UserDataDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/entity/user_profile/DTOs/DtoUserProfile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/media/MediaService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/resources/datosperfil.json" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/resources/datosperfil.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/controller/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/infoUser/UserProfileRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/infoUser/UserProfileRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/posts/DescriptionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/posts/DescriptionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/posts/PostDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/posts/PostDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/posts/PostRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/dto/posts/PostRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/entity/friend/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/entity/friend/Friend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/repository/FriendRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/repository/FriendRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/repository/UserProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/repository/UserProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/UserProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/UserProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/friend/FriendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/friend/FriendService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/post/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/java/com/noCountry/social_media_backend/demo/service/post/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social_media-backend/src/main/resources/agregarPost.json" beforeDir="false" afterPath="$PROJECT_DIR$/social_media-backend/src/main/resources/agregarPost.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Record" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -45,28 +56,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Claudia/Documents/c23-63-webapp/social_media-frontend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
-    "spring.configuration.checksum": "fe01ce2a7fbac8fafaed7c982a04e229"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Claudia/Documents/c23-63-webapp/social_media-frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fe01ce2a7fbac8fafaed7c982a04e229&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.SocialMediaBackendApplication">
     <configuration name="generated-requests | #9" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="9" requestIdentifier="#9" runType="Run single request">
       <method v="2" />
@@ -98,6 +109,14 @@
       <workItem from="1738440896354" duration="5596000" />
       <workItem from="1738448437510" duration="3333000" />
       <workItem from="1738451807996" duration="3023000" />
+      <workItem from="1738537106722" duration="3020000" />
+      <workItem from="1738619486139" duration="10079000" />
+      <workItem from="1738697134692" duration="751000" />
+      <workItem from="1738758273537" duration="1362000" />
+      <workItem from="1738877182786" duration="3292000" />
+      <workItem from="1738885393823" duration="800000" />
+      <workItem from="1738886259878" duration="311000" />
+      <workItem from="1738886899296" duration="1670000" />
     </task>
     <servers />
   </component>
