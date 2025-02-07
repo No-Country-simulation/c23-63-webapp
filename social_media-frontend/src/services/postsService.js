@@ -5,7 +5,7 @@ import postsFeed from '../models/post_feed.json'
 
 export const createPost = async (postData) => {
   try {
-    const { data } = await axiosApi.post('/posts/create', postData)
+    const { data } = await axiosApi.post('api/posts/create', postData)
     return data
   } catch (err){
     console.error("Error al crear el post:", err);
