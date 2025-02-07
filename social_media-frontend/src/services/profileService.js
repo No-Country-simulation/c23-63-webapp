@@ -35,7 +35,7 @@ export const getProfileById = ( idParam, sessionId) => {
 
 export const getPostsByProfileId = async (id) => {
   try {
-    const response = await axiosApi.get(`api/posts/${id}`)
+    const response = await axiosApi.get(`api/posts/user/${id}`)
     return response.data
   }catch(e){
     const message = e?.response
