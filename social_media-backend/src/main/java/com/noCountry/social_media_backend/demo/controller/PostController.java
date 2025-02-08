@@ -20,16 +20,6 @@ public class PostController {
         this.postService = postService;
     }
 
-    @GetMapping("/{userId}")
-    public PostResponseDTO getPostsByUserId(@PathVariable Integer userId) {
-        return postService.getPostsByUserId(userId);
-    }
-
-    @GetMapping
-    public ResponseEntity<List<FeedResponseDTO>> getAllPosts() {
-        return ResponseEntity.ok(postService.getAllPosts());
-    }
-
     @PostMapping(value = "/create", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<Post> createPost(
             @RequestParam("userId") Integer userId,
@@ -44,7 +34,17 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.CREATED).body(newPost);
     }
 
-    @GetMapping("/{postId}")
+    @GetMapping("/user/{userId}")
+    public PostResponseDTO getPostsByUserId(@PathVariable Integer userId) {
+        return postService.getPostsByUserId(userId);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<FeedResponseDTO>> getAllPosts() {
+        return ResponseEntity.ok(postService.getAllPosts());
+    }
+
+    @RequestMapping(value = "/{postId}", method = RequestMethod.GET)
     public PostDTO getPostByPostId(@PathVariable Integer postId) {
         return ResponseEntity.ok(postService.getPostByPostId(postId)).getBody();
     }

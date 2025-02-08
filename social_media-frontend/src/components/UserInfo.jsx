@@ -106,7 +106,7 @@ export default function UserInfo({isFeed, idParam }) {
               </>
             )}
             {
-              (isFriend !== null) && <button className={`button-user-info ${isFriend ? 'is-friend':''}`} onClick={handleFollow}>
+              isFriend && <button className={`button-user-info ${isFriend ? 'is-friend':''}`} onClick={handleFollow}>
                 <span>{textFriend}</span>
               </button>
             }

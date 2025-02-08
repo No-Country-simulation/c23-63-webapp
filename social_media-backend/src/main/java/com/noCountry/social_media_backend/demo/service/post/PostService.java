@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -74,21 +75,31 @@ public class PostService {
         return postRepository.save(post);
     }
 
-    private String saveImage(MultipartFile file) {
+    public String saveImage(MultipartFile file) {
+        String path = "";
         try {
-            if (file == null || file.isEmpty()) {
-                return null;
+            // Define la ruta personalizada para guardar la imagen
+            String uploadDir = "C:\\Users\\Claudia\\Documents\\c23-63-webapp\\social_media-backend\\src\\main\\resources\\images" + File.separator;
+
+            // Crea el directorio si no existe
+            File directory = new File(uploadDir);
+            if (!directory.exists()) {
+                directory.mkdirs();  // Crea el directorio si no existe
             }
 
-            String filename = UUID.randomUUID() + "_" + file.getOriginalFilename();
-            Path filePath = Paths.get(UPLOAD_DIR, filename);
-            Files.createDirectories(filePath.getParent());
-            file.transferTo(filePath.toFile());
-            return filePath.toString();
-            //return "/uploads/" + filename;
+            // Guardar la imagen en la nueva ruta
+            File destinationFile = new File(uploadDir + file.getOriginalFilename()); // Asegúrate de que la ruta sea correcta
+
+            // Transferir el contenido del archivo
+            file.transferTo(destinationFile);
+
+            // Devuelve la ruta completa donde se ha guardado la imagen
+            path = destinationFile.getAbsolutePath();
         } catch (IOException e) {
-            throw new RuntimeException("Error al guardar la imagen", e);
+            e.printStackTrace();  // Maneja el error de manera adecuada, si es necesario
         }
+
+        return path;
     }
 
     public List<FeedResponseDTO> getAllPosts() {

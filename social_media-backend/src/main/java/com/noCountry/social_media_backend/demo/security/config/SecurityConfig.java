@@ -51,10 +51,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequest ->
                         authorizeRequest
                                 .requestMatchers("/auth/**").permitAll()
-                                .requestMatchers("/posts/**").permitAll()
+                                .requestMatchers("/api/**").permitAll()
                                 .requestMatchers(
                                         "/user/**",
-                                        "/post/**"
+                                        "/posts/**"
                                 ).authenticated()
                                 .anyRequest().authenticated()
                 )
@@ -83,7 +83,7 @@ public class SecurityConfig {
             jwtCookie.setMaxAge(60 * 60 * 24); // 24 horas
 
             response.addCookie(jwtCookie);
-            response.sendRedirect("http://localhost:5173/auth/verify-session");
+            response.sendRedirect("http://localhost:5177/auth/verify-session");
         };
     }
 }
